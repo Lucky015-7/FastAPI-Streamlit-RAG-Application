@@ -1,0 +1,25 @@
+# --- Sensitive Information (NEVER UPLOAD) ---
+.env
+rag_app.db
+app.log
+
+# --- Vector Database (Chroma Persistence) ---
+# We ignore the database content but keep the directory if needed
+chroma_db/
+**/chroma_db/
+
+# --- Python Environment & Build Artifacts ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# --- IDE Specific (VS Code / PyCharm) ---
+.vscode/
+.idea/
+
+# --- Operating System Files ---
+.DS_Store
+Thumbs.db
