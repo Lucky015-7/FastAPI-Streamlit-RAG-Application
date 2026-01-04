@@ -25,7 +25,8 @@ jobs:
           pip install pytest httpx  # Needed for testing
 
       - name: Run Tests
-        # We skip Groq-dependent tests in CI to save API credits
+        env:
+          PYTHONPATH: ${{ github.workspace }}/api# We skip Groq-dependent tests in CI to save API credits
         run: |
           pytest api/test_api.py
 
