@@ -20,8 +20,6 @@ from dotenv import load_dotenv
 # Load variables from .env file
 load_dotenv()
 
-# Now the rest of your imports can happen
-# ...
 
 # 1. Advanced Logging Configuration for Production Monitoring
 logging.basicConfig(
