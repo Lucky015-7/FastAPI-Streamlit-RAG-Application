@@ -1,3 +1,4 @@
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Lucky015-7/FastAPI-Streamlit-RAG-Application/ci.yml)
 [![Python CI](https://github.com/Lucky015-7/FastAPI-Streamlit-RAG-Application/actions/workflows/ci.yml/badge.svg)](https://github.com/Lucky015-7/FastAPI-Streamlit-RAG-Application/actions/workflows/ci.yml)
 🚀 Multi-User RAG Chatbot
 
