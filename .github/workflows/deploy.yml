@@ -18,8 +18,8 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            # These commands run on your AWS server
             mkdir -p ~/rag-app && cd ~/rag-app
             git pull origin main || git clone https://github.com/Lucky015-7/FastAPI-Streamlit-RAG-Application.git .
-            docker-compose down
-            docker-compose up -d --build
+            # Use the newer command format
+            docker compose down
+            docker compose up -d --build
