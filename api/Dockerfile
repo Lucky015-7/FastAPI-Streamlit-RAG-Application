@@ -19,5 +19,5 @@ COPY api/ ./api/
 # Expose the FastAPI port
 EXPOSE 8000
 
-# Command to run the FastAPI server
-CMD ["python", "api/main.py"]
+# Directly run Uvicorn with the correct host binding
+CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
