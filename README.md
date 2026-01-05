@@ -1,3 +1,4 @@
+[![Python CI](https://github.com/Lucky015-7/FastAPI-Streamlit-RAG-Application/actions/workflows/ci.yml/badge.svg)](https://github.com/Lucky015-7/FastAPI-Streamlit-RAG-Application/actions/workflows/ci.yml)
 🚀 Multi-User RAG Chatbot
 A high-performance, production-ready Retrieval-Augmented Generation (RAG) application. This project features a modular architecture with a FastAPI backend and a Streamlit frontend, designed for lightning-fast document intelligence using Groq and Llama-3.3.
 
