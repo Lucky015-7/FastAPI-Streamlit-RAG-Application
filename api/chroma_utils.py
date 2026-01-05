@@ -5,6 +5,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
+from api.db_utils import insert_document_record
 
 # Initialize Embeddings & Vectorstore
 embedding_function = HuggingFaceEmbeddings(

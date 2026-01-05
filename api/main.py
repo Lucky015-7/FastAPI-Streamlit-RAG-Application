@@ -1,27 +1,40 @@
+import numpy as np
 import os
 import uuid
 import shutil
 import logging
+import sys
 from dotenv import load_dotenv
 
 # FastAPI and Pydantic imports
 from fastapi import FastAPI, File, UploadFile, HTTPException, Request
 from fastapi.responses import JSONResponse
 
-# UPDATED IMPORTS: Added 'api.' prefix to find modules within the container
-from api.chroma_utils import index_document_to_chroma, delete_doc_from_chroma
-from api.db_utils import (
-    insert_application_logs,
-    get_chat_history,
-    get_all_documents,
-    insert_document_record,
-    delete_document_record
-)
-from api.langchain_utils import get_rag_chain
-from api.pydantic_models import QueryInput, QueryResponse, DocumentInfo, DeleteFileRequest
+# --- SMART IMPORT BLOCK ---
+# This allows the code to run from the root (Docker) OR from inside /api (Local)
+try:
+    from api.chroma_utils import index_document_to_chroma, delete_doc_from_chroma
+    from api.db_utils import (
+        insert_application_logs, get_chat_history, get_all_documents,
+        insert_document_record, delete_document_record
+    )
+    from api.langchain_utils import get_rag_chain
+    from api.pydantic_models import QueryInput, QueryResponse, DocumentInfo, DeleteFileRequest
+except ModuleNotFoundError:
+    from chroma_utils import index_document_to_chroma, delete_doc_from_chroma
+    from db_utils import (
+        insert_application_logs, get_chat_history, get_all_documents,
+        insert_document_record, delete_document_record
+    )
+    from langchain_utils import get_rag_chain
+    from pydantic_models import QueryInput, QueryResponse, DocumentInfo, DeleteFileRequest
 
 # Load variables from .env file
 load_dotenv()
+
+# NumPy 2.x Compatibility Fix (Important for Torch/Langchain)
+if int(np.__version__.split('.')[0]) >= 2:
+    os.environ["NUMPY_EXPERIMENTAL_ARRAY_FUNCTION"] = "0"
 
 # 1. Advanced Logging Configuration
 logging.basicConfig(
@@ -135,7 +148,6 @@ def delete_document(request: DeleteFileRequest):
         status_code=500, detail="System failed to delete the document.")
 
 
-# 5. Uvicorn runner for local testing (optional when using Docker CMD)
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)

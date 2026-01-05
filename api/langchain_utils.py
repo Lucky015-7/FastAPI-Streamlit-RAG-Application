@@ -3,7 +3,7 @@ from langchain_groq import ChatGroq
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables import RunnableLambda
-from chroma_utils import vectorstore
+from api.chroma_utils import vectorstore
 
 # Initialize retriever
 retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
