@@ -1,6 +1,11 @@
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Lucky015-7/FastAPI-Streamlit-RAG-Application/ci.yml)
+
 [![Python CI](https://github.com/Lucky015-7/FastAPI-Streamlit-RAG-Application/actions/workflows/ci.yml/badge.svg)](https://github.com/Lucky015-7/FastAPI-Streamlit-RAG-Application/actions/workflows/ci.yml)
 [![Deploy to AWS EC2](https://github.com/Lucky015-7/FastAPI-Streamlit-RAG-Application/actions/workflows/deploy.yml/badge.svg)](https://github.com/Lucky015-7/FastAPI-Streamlit-RAG-Application/actions/workflows/deploy.yml)
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688)
+![Streamlit](https://img.shields.io/badge/Streamlit-Frontend-red)
+![Docker](https://img.shields.io/badge/Docker-Compose-2496ED)
+![AWS](https://img.shields.io/badge/AWS-EC2-orange)
 
 
 🚀 Multi-User RAG Chatbot
