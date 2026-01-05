@@ -1,8 +1,9 @@
 import requests
 import streamlit as st
+import os
 
 # Using a variable makes it easy to change if you deploy to a real server later
-BASE_URL = "http://localhost:8000"
+BASE_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
 
 
 def get_api_response(question, session_id, model):
