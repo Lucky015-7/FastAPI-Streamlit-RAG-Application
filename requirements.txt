@@ -1,19 +1,27 @@
+# Use CPU-only repository for heavy AI libraries
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# Core AI & Machine Learning (CPU Optimized)
+torch==2.2.1+cpu
+torchvision==0.17.1+cpu
+sentence_transformers
+
 # Web Server & API Framework
 fastapi
 uvicorn
 python-multipart
+streamlit
 
-# Modern LangChain Integrations
+# LangChain Integrations
 langchain
 langchain-groq
 langchain-huggingface
 langchain-chroma
 langchain-community
 
-# Document Processing & RAG Utilities
+# Document Processing & Utilities
 pypdf
 docx2txt
-sentence_transformers
 pydantic
 python-dotenv
 requests
